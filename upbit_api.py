@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[11]:
-
-
-pip install pyupbit
-
-
-# In[85]:
-
-
 import time
 import pyupbit
 import datetime
@@ -72,16 +60,3 @@ while True:
     except Exception as e:
         print(e)
         time.sleep(1)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
