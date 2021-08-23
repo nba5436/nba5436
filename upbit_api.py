@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[11]:
+
+
+pip install pyupbit
+
+
+# In[9]:
+
+
 import time
 import pyupbit
 import datetime
@@ -33,13 +45,17 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTC")
-        end_time = start_time + datetime.timedelta(hours=15)
+        end_time = start_time + datetime.timedelta(minutes=1)
         print(now)
         print(start_time)
         print(end_time)
         #print(btc_mp)
         #print(eth_mp)
 
+        if now > end_time:
+            btc_mp = 0
+            eth_mp = 0
+            
         if start_time <= now < end_time:
             krw = get_balance("KRW")
             print(krw)
@@ -52,7 +68,7 @@ while True:
                     upbit.buy_market_order("KRW-BTC", 50000)
                     btc_mp = 1
                     print(btc_mp)
-                elif eth_mp == 0:
+                if eth_mp == 0:
                     upbit.buy_market_order("KRW-ETH", 50000)
                     eth_mp = 1
                     print(eth_mp)
@@ -60,3 +76,16 @@ while True:
     except Exception as e:
         print(e)
         time.sleep(1)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
