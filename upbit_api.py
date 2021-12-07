@@ -45,6 +45,7 @@ while True:
         if now > end_time:
             btc_mp = 0
             eth_mp = 0
+            xrp_mp = 0
             
         if start_time <= now < end_time:
             krw = get_balance("KRW")
